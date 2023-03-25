@@ -39,3 +39,7 @@ lerna-debug.log*
 .vscode/*
 *.yml
 *.lock
+
+
+app.production.yaml
+app.test.yaml
