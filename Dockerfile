@@ -8,7 +8,7 @@ COPY . .
 
 RUN rm -rf node_modules
 
-RUN npm config set registry https://registry.npm.taobao.org
+RUN npm config set registry https://registry.npmmirror.com
 
 RUN npm i
 
