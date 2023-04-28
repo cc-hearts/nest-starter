@@ -16,7 +16,7 @@ export const dataBaseProviders = [
     provide: DATA_SOURCE,
     useFactory: async () => {
       const databaseConfig = mysqlConfig()
-      delete databaseConfig.entities
+      databaseConfig.synchronize = false
       const dataSource = new DataSource(databaseConfig)
       return dataSource.initialize()
     },
