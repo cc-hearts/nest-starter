@@ -1,11 +1,11 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import { ValidationPipe, VersioningType } from '@nestjs/common'
-import { generatorSwaggerDocument } from '../provider/swagger.provider'
-import { HttpInterceptor } from '../interceptors/http.interceptor'
-import { ExceptionFilters } from '../exceptions/exception.filter'
-import { AuthGuard } from '../guards/auth.guard'
-import { RedisService } from '../provider/redis.provider'
+import { generatorSwaggerDocument } from './provider/swagger.provider'
+import { HttpInterceptor } from './interceptors/http.interceptor'
+import { ExceptionFilters } from './exceptions/exception.filter'
+import { AuthGuard } from './guards/auth.guard'
+import { RedisService } from './provider/redis.provider'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)

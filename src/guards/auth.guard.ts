@@ -13,8 +13,8 @@ import {
   EMPTY_TOKEN,
   EXPIRED_TOKEN,
   ROUTER_UNAUTHORIZE,
-} from 'constants/message'
-import { validateRoute } from 'utils/validateRoute'
+} from '../constants/message'
+import { validateRoute } from '../utils/validateRoute'
 import type { cb } from '../typings'
 
 @Injectable()

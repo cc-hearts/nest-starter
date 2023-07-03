@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm'
 import { sumSkip } from './definePagination'
-import { BasePaginationDto } from 'common/basePagination.dto'
+import { BasePaginationDto } from '../common/basePagination.dto'
 
 export async function sumPagination<
   P extends BasePaginationDto,

@@ -1,4 +1,4 @@
-import { dataBaseProviders } from 'provider/dataBase.provider'
+import { dataBaseProviders } from '../provider/dataBase.provider'
 import { DataSource } from 'typeorm'
 import { ObjectLiteral } from 'typeorm/common/ObjectLiteral'
 import { EntityTarget } from 'typeorm/common/EntityTarget'

@@ -1,18 +1,22 @@
+port: 3000
+# mysql config
 mysql:
-  type:
-  database:
-  username:
-  password:
-  host:
-  logging:
-  port:
+  type: mysql
+  database: pic
+  username: root
+  password: '123456'
+  host: localhost
+  logging: true
+  port: 3306
 
-# token 加密字段
-CRYPTO_SECRET_KEY:
-CRYPTO_ALGORITHM:
-CRYPTO_IV:
+# oss config
+oss_prefix: 'oss'
+host: 'http://localhost:30002'
+folder_name: 'file'
+port: 30002
 
+# redis config
 redis:
-  port:
-  host:
-  password:
+  port: 6379
+  host: localhost
+  password: 'chen0613'

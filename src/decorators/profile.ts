@@ -1,5 +1,5 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common'
-import { IUserInfo } from 'typings'
+import { IUserInfo } from '../typings'
 
 /**
  * 获取用户信息
