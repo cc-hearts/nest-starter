@@ -1,8 +1,8 @@
 {
-  "name": "sign-in",
-  "version": "0.0.1",
-  "description": "",
-  "author": "heart",
+  "name": "nest-starter",
+  "version": "1.0.0",
+  "description": "nest templates support the basics of databases, swagger, and more",
+  "author": "cc-heart",
   "private": true,
   "license": "MIT",
   "scripts": {
