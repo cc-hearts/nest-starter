@@ -1,9 +1,3 @@
-import { randomUUID } from 'crypto'
-
-export function genUUID() {
-  return randomUUID()
-}
-
 export function addPrefixSelection(prefix: string, arr: string[]) {
   return arr.map((val) => `${prefix}.${val}`)
 }

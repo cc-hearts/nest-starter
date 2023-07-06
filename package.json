@@ -10,6 +10,7 @@
     "build": "nest build ",
     "prettier": "npx prettier --write .",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "gen": "npx gen-index-export",
     "start": "nest start",
     "start:dev": "cross-env NODE_ENV=development nest start --watch",
     "start:debug": "cross-env NODE_ENV=development nest start --debug --watch",
@@ -22,6 +23,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@cc-heart/utils": "^3.0.1",
+    "@cc-heart/utils-service": "^0.0.2",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
@@ -31,17 +34,18 @@
     "@nestjs/typeorm": "^9.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
+    "cross-env": "^7.0.3",
     "ioredis": "^5.2.6",
     "mysql2": "^3.0.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
     "typeorm": "^0.3.11",
-    "cross-env": "^7.0.3",
     "yaml": "^2.2.1"
   },
   "devDependencies": {
     "@cc-heart/eslint-config": "^0.0.5",
+    "@cc-heart/gen-index-export": "^0.1.2",
     "@nestjs/cli": "^9.0.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",

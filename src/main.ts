@@ -6,6 +6,7 @@ import { HttpInterceptor } from './interceptors/http.interceptor'
 import { ExceptionFilters } from './exceptions/exception.filter'
 import { AuthGuard } from './guards/auth.guard'
 import { RedisService } from './provider/redis.provider'
+import { getPort } from './utils/env'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
@@ -25,7 +26,9 @@ async function bootstrap() {
 
   app.useGlobalGuards(new AuthGuard(app.get(RedisService)))
 
-  await app.listen(3000)
+  const port = getPort()
+
+  await app.listen(port)
 }
 
 bootstrap()

@@ -1,6 +1,14 @@
-import { createHash, createCipheriv, createDecipheriv } from 'crypto'
+import {
+  createHash,
+  createCipheriv,
+  createDecipheriv,
+  randomUUID,
+} from 'crypto'
+import { getConfig } from './env'
 
-import { getConfig } from './readConfig'
+export function genUUID() {
+  return randomUUID()
+}
 
 export function encodeMd5(str: string) {
   const md5 = createHash('md5')

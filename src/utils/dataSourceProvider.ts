@@ -1,18 +1,13 @@
-import { dataBaseProviders } from '../provider/dataBase.provider'
 import { DataSource } from 'typeorm'
-import { ObjectLiteral } from 'typeorm/common/ObjectLiteral'
-import { EntityTarget } from 'typeorm/common/EntityTarget'
+import { DATA_SOURCE } from '../constants'
 
-export function dataSourceProviderFactory(
-  provide: string,
-  factory: EntityTarget<ObjectLiteral>
-) {
-  return [
-    ...dataBaseProviders,
-    {
-      provide,
-      useFactory: (dataSource: DataSource) => dataSource.getRepository(factory),
-      inject: ['DATA_SOURCE'],
-    },
-  ]
+type ctor = { new (...args: any): object }
+
+export const ProviderFactory = (provide: string | ctor, repository: ctor) => {
+  return {
+    provide,
+    useFactory: (dataSource: DataSource) =>
+      dataSource.getRepository(repository),
+    inject: [DATA_SOURCE],
+  }
 }

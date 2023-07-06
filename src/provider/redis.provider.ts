@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import Redis, { ClientContext, Result } from 'ioredis'
-import { getConfig, isObject } from '../utils'
-
+import { getConfig } from '../utils'
+import { isObject } from '@cc-heart/utils'
 type redisVal = string | Buffer | number
 
 @Injectable()

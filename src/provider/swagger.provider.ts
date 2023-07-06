@@ -1,9 +1,8 @@
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger'
-import { getPkg } from '../utils'
 import { INestApplication } from '@nestjs/common'
-
+import { getPackage } from '@cc-heart/utils'
 function generatorSwaggerConfig() {
-  const pkg = getPkg()
+  const pkg = getPackage()
   return new DocumentBuilder()
     .setTitle(pkg.name)
     .setDescription(pkg.description)

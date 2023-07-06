@@ -1,4 +1,4 @@
-import { getConfig } from '../utils'
+import { getConfig } from './env'
 export function validateRoute(route: string, method: string, user: object) {
   const { SYSTEM_ID } = getConfig()
   const routerList = Reflect.get(user, SYSTEM_ID)

@@ -1,26 +1,21 @@
+import { DATA_SOURCE, IS_DEV } from '../constants'
+import { getMysqlConfig } from '../utils/env'
 import { DataSource } from 'typeorm'
-import { TypeOrmModule } from '@nestjs/typeorm'
-import { getConfig, isProd } from '../utils'
-import { DATA_SOURCE } from '../constants'
 import { resolve } from 'path'
 
-export const mysqlConfig = () => {
-  const { mysql } = getConfig()
-  return Object.assign({}, mysql, {
-    entities: [resolve(__dirname, '..', './src/**/*.entity.js')], // 配置实体类的位置
-    synchronize: !isProd(), //  生产环境关闭 如果为 true，那么在连接数据库时，typeorm 会自动根据 entity 目录来修改数据表 可能造成的结果是直接删除数据
-  })
-}
-export const dataBaseProviders = [
+// 全局的可注入的 database provider
+export const DatabaseProvider = [
   {
     provide: DATA_SOURCE,
     useFactory: async () => {
-      const databaseConfig = mysqlConfig()
-      databaseConfig.synchronize = false
-      const dataSource = new DataSource(databaseConfig)
-      return dataSource.initialize()
+      const mysqlConfig = getMysqlConfig() || {}
+      const databaseConfig = {
+        ...mysqlConfig,
+        entities: [resolve(__dirname, '..', './**/*.entity.js')],
+        synchronize: IS_DEV,
+      }
+      const databaseSource = new DataSource(databaseConfig)
+      return databaseSource.initialize()
     },
   },
 ]
-const getMysqlConfig = mysqlConfig()
-export default [TypeOrmModule.forRoot(getMysqlConfig)]
