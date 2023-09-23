@@ -15,7 +15,7 @@ import {
   ROUTER_UNAUTHORIZE,
 } from '../constants/message'
 import { validateRoute } from '../utils/validateRoute'
-import type { cb } from '../typings'
+import type { cb } from '../typings/index'
 
 @Injectable()
 export class AuthGuard implements CanActivate {

@@ -5,7 +5,7 @@ import {
   NestInterceptor,
 } from '@nestjs/common'
 import { map, Observable } from 'rxjs'
-import type { IBaseResponse } from '../typings'
+import type { IBaseResponse } from '../typings/index'
 
 @Injectable()
 export class HttpInterceptor implements NestInterceptor {

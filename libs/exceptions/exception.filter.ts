@@ -7,7 +7,7 @@ import {
   HttpStatus,
   UnauthorizedException,
 } from '@nestjs/common'
-import { exceptionResponse } from '../typings'
+import { exceptionResponse } from '../typings/index'
 
 @Catch()
 export class ExceptionFilters implements ExceptionFilter {

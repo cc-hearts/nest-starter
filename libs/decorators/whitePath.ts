@@ -1,4 +1,4 @@
-import type { cb } from '../typings'
+import type { cb } from '../typings/index'
 
 const set = new WeakSet<cb>()
 

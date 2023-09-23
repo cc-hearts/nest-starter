@@ -7,6 +7,7 @@ Nest-Stencil is a repository, a Nest template library that provides a basic setu
 - [x] Swagger documentation support out of the box
 - [x] Custom decorators for cleaner, more concise code
 - [x] Preconfigured setup for easier API development
+- [x] Support for microservices
 
 ## Getting Started
 
