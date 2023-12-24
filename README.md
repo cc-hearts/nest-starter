@@ -33,7 +33,7 @@ mysql:
   logging:
   port:
 
-# token 加密字段
+# Token encryption field
 CRYPTO_SECRET_KEY:
 CRYPTO_ALGORITHM:
 CRYPTO_IV:
